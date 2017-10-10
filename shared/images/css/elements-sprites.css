@@ -1,0 +1,52 @@
+.Blizzard, .Bolt, .Bomb, .Fire, .Forest, .Land, .Water, .Wind{
+	background: url(../../images/sprites/elements-sprites.png) no-repeat;
+}
+
+.Blizzard{
+	background-position: -7.9910888671875px -11px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Bolt{
+	background-position: -53.9910888671875px -11px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Bomb{
+	background-position: -144.00003051757812px -41px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Fire{
+	background-position: -103.00003051757812px -45px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Forest{
+	background-position: -146.00003051757812px -15px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Land{
+	background-position: -103.00003051757812px -14px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Water{
+	background-position: -8px -44px ;
+	width: 21px;
+	height: 16px;
+}
+
+.Wind{
+	background-position: -57.000030517578125px -43px ;
+	width: 21px;
+	height: 16px;
+}
+

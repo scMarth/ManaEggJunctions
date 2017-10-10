@@ -1,0 +1,82 @@
+.blueME, .greenME, .greyME, .lightblueME, .rainbowME, .redME, .yellowME, .h-icon, .ip-icon, .mp-icon, .p-icon, .s-icon, .w-icon{
+	background: url(../../images/sprites/sprites.png) no-repeat;
+}
+
+.blueME{
+	background-position: -11px -19px ;
+	width: 70px;
+	height: 58px;
+}
+
+.greenME{
+	background-position: -10px -90px ;
+	width: 70px;
+	height: 58px;
+}
+
+.greyME{
+	background-position: -10px -161px ;
+	width: 70px;
+	height: 58px;
+}
+
+.lightblueME{
+	background-position: -11px -231px ;
+	width: 70px;
+	height: 58px;
+}
+
+.rainbowME{
+	background-position: -93px -18px ;
+	width: 70px;
+	height: 58px;
+}
+
+.redME{
+	background-position: -93px -91px ;
+	width: 70px;
+	height: 58px;
+}
+
+.yellowME{
+	background-position: -92px -160px ;
+	width: 70px;
+	height: 58px;
+}
+
+.h-icon{
+	background-position: -183px -26px ;
+	width: 59px;
+	height: 48px;
+}
+
+.ip-icon{
+	background-position: -181px -97px ;
+	width: 59px;
+	height: 48px;
+}
+
+.mp-icon{
+	background-position: -175px -163px ;
+	width: 59px;
+	height: 48px;
+}
+
+.p-icon{
+	background-position: -257px -26px ;
+	width: 59px;
+	height: 48px;
+}
+
+.s-icon{
+	background-position: -256px -97px ;
+	width: 59px;
+	height: 48px;
+}
+
+.w-icon{
+	background-position: -257px -161px ;
+	width: 59px;
+	height: 48px;
+}
+

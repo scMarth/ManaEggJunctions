@@ -1,0 +1,46 @@
+.medium-yellowME, .medium-redME, .medium-rainbowME, .medium-lightblueME, .medium-greyME, .medium-greenME, .medium-blueME{
+	background: url(../../images/sprites/medium-egg-sprites.png) no-repeat;
+}
+
+.medium-yellowME{
+	background-position: -8px -10.000003814697266px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-redME{
+	background-position: -59.00000762939453px -10.000003814697266px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-rainbowME{
+	background-position: -206.0000228881836px -10px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-lightblueME{
+	background-position: -155.00000762939453px -9px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-greyME{
+	background-position: -305.00000762939453px -11.000011444091797px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-greenME{
+	background-position: -255.0000228881836px -11px ;
+	width: 36px;
+	height: 30px;
+}
+
+.medium-blueME{
+	background-position: -107.0000228881836px -10.000011444091797px ;
+	width: 36px;
+	height: 30px;
+}
+

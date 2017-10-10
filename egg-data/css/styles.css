@@ -1,0 +1,172 @@
+*, html{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #d0d0d0;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+html, body{
+   background-color: #121212;
+}
+
+div#egg-data-div{
+   margin-left: 20px;
+   margin-top: 20px;
+}
+
+.eggDiv{
+   margin-top: 20px;
+   background-color: #202020;
+   margin-right: 20px;
+   padding: 20px;
+   height:600px;
+}
+
+.eggNameDiv{
+   padding-left: 20px;
+   line-height: 32px;
+   height:100%;
+   font-size: 32px;
+   vertical-align: top;
+
+}
+
+.eggImage, .eggNameDiv{
+   display: inline-block;
+}
+
+.eggTitle{
+   height: 58px;
+}
+
+
+.eggDiv:hover{
+   background-color: #262626;
+}
+
+
+.spellCountDiv, .eggTitle{
+   display: flex;
+   justify-content: center;
+}
+
+.centerText{
+   text-align: center;
+   display:block;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.spellCountSpan{
+   display:block;
+}
+
+.spellCountNum{
+   display:block;
+   color: #80efaf;
+   font-weight: bold;
+}
+
+.magicList, .junctionTable{
+   width:100%;
+}
+
+.leftEgg{
+   text-align: left;
+}
+
+.rightEgg{
+   text-align: left;
+}
+
+.junctionPlus{
+   text-align: center;
+}
+
+.inlineDiv{
+   display: inline-block;
+}
+
+.leftJunction{
+   margin-left: 50%;
+}
+
+.rightJunction{
+   margin-left: 30%;
+}
+
+.mintBold{
+   color: #80efaf;
+   font-weight: bold;
+}
+
+.mintBoldBig{
+   color: #80efaf;
+   font-weight: bold;
+   line-height: 32px;
+   height:100%;
+   font-size: 32px;
+
+}
+
+/*
+.leftSpellTable, .rightSpellTable{
+   display: inline-block;
+   width: 50%;
+   vertical-align: top;
+}
+
+.rightSpellTable tbody{
+   display:table;
+   width: 100%;
+}
+
+.leftSpellTable tbody{
+   display:table;
+   width: 100%;
+}
+
+.leftSpellTable tr:nth-child(odd), .rightSpellTable tr:nth-child(odd) {
+   background-color: #343434;
+}
+
+.leftSpellTable tr:nth-child(even), .rightSpellTable tr:nth-child(even) {
+   background-color: #202020;
+}
+
+.leftSpellTable tr:hover, .rightSpellTable tr:hover{
+   background-color: #404040;
+}
+*/
+
+
+.spellTable {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.spellTable tbody{
+  display: table;
+  width: 100%;
+}
+
+.spellTable tr:nth-child(odd){
+  background-color: #343434;
+}
+
+.spellTable tr:nth-child(even){
+  background-color: #202020;
+}
+
+.spellTable tr:hover{
+  background-color: #404040;
+}
+
+.leftColumn, .rightColumn{
+   width: 50%;
+   display: inline-block;
+   vertical-align: top;
+}

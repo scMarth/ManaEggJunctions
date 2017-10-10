@@ -1,0 +1,45 @@
+.small-blueME, .small-greenME, .small-greyME, .small-lightblueME, .small-rainbowME, .small-redME, .small-yellowME{
+	background: url(../../images/sprites/small-egg-sprites.png) no-repeat;
+}
+
+.small-blueME{
+	background-position: -16px -16px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-greenME{
+	background-position: -66px -16px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-greyME{
+	background-position: -63px -65px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-lightblueME{
+	background-position: -114px -17px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-rainbowME{
+	background-position: -16px -66px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-redME{
+	background-position: -112px -66px ;
+	width: 19px;
+	height: 16px;
+}
+
+.small-yellowME{
+	background-position: -165px -21px ;
+	width: 19px;
+	height: 16px;
+}

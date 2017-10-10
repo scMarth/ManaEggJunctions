@@ -1,0 +1,112 @@
+*, html{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #d0d0d0;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+html, body{
+   background-color: #121212;
+}
+
+div#egg-data-div{
+   margin-left: 20px;
+   margin-top: 20px;
+}
+
+.eggDiv{
+   margin-top: 20px;
+   background-color: #202020;
+   margin-right: 20px;
+   padding: 20px;
+   height:300px;
+}
+
+.eggNameDiv{
+   padding-left: 20px;
+   line-height: 32px;
+   height:100%;
+   font-size: 32px;
+   vertical-align: top;
+
+}
+
+.eggImage, .eggNameDiv{
+   display: inline-block;
+}
+
+.eggTitle{
+   height: 58px;
+}
+
+.eggDiv:hover{
+   background-color: #262626;
+}
+
+
+.eggTitle{
+   display: flex;
+   justify-content: center;
+}
+
+.centerText{
+   text-align: center;
+   display:block;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.junctionTable{
+   width:100%;
+   border-collapse: collapse;
+}
+
+.leftEgg{
+   text-align: left;
+}
+
+.rightEgg{
+   text-align: left;
+}
+
+.junctionPlus{
+   text-align: center;
+}
+
+.inlineDiv{
+   display: inline-block;
+}
+
+.leftJunction{
+   margin-left: 10%;
+}
+
+.rightJunction{
+   margin-left: 30%;
+}
+
+.mintBoldBig{
+   color: #80efaf;
+   font-weight: bold;
+   line-height: 32px;
+   height:100%;
+   font-size: 32px;
+
+}
+
+.mintBold{
+   color: #80efaf;
+   font-weight: bold;
+}
+
+.leftColumn, .rightColumn{
+   width: 50%;
+   display: inline-block;
+   vertical-align: top;
+}
+
+.optimalPair{
+  border: 1px solid #80efaf;
+}

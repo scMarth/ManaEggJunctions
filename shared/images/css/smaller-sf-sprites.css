@@ -1,0 +1,46 @@
+.w-icon, .h-icon, .ip-icon, .mp-icon, .p-icon, .s-icon{
+	background: url(../../images/sprites/smaller-sf-sprites.png) no-repeat;
+}
+
+.w-icon{
+	background-position: -115.0000228881836px -65.00000381469727px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
+.h-icon{
+	background-position: -66px -65.00000381469727px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
+.ip-icon{
+	background-position: -14.000022888183594px -65.00000381469727px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
+.mp-icon{
+	background-position: -114.0000228881836px -22.000003814697266px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
+.p-icon{
+	background-position: -64.0000228881836px -20.000003814697266px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
+.s-icon{
+	background-position: -14.000022888183594px -19.000003814697266px ;
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+}
+
