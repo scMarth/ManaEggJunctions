@@ -73,7 +73,7 @@ function renderEggData(data){
 }
 
 function main(){
-   getOptimalPairs();
+   //getOptimalPairs();
    renderEggData(eggData);
 
    /*
@@ -83,10 +83,11 @@ function main(){
    console.log("Stone " + minEggs('Stone'));
    */
 
-   debugDump();
-
+   //debugDump();
 }
 
+
+/*
 // returns the minimum amount of base eggs (level one eggs) needed to make the input egg
 function minEggs(eggName){
    console.log("minEggs: " + eggName);
@@ -156,19 +157,21 @@ function minEggs(eggName){
 
    }
 }
+*/
 
 
+/*
 function getOptimalPairs(){
-   /*
-   for (var lvl=1; lvl<eggLevels.length; lvl++){
-      console.log("LEVEL " + lvl);
-      for (var i=0; i<eggLevels[lvl].length; i++){
-         name = eggLevels[lvl][i];
-         minEggs(name);
-         console.log("blah " + name);
-      }
-   }
-   */
+   
+   // for (var lvl=1; lvl<eggLevels.length; lvl++){
+   //    console.log("LEVEL " + lvl);
+   //    for (var i=0; i<eggLevels[lvl].length; i++){
+   //       name = eggLevels[lvl][i];
+   //       minEggs(name);
+   //       console.log("blah " + name);
+   //    }
+   // }
+   
 
    for (var lvl=1; lvl<3; lvl++){
       console.log("LEVEL " + lvl);
@@ -180,8 +183,18 @@ function getOptimalPairs(){
    }
 
 }
+*/
 
 
+// for each egg, store an array telling which indeces of its junctions are the
+// optimal junction pairs
+//
+// e,g, if the minimum cost way to make a Heat egg is the first junction in
+// eggData['Heat'].junctionPairs[] is listed in junctionPairs[0] (the first junction pair)
+// then optimalPairs['Heat'] will be an array containing the single integer 0 (for index 0)
+//
+// if there are more, for example, 2 junction pairs both are the minimum cost junctions, 
+// the array will contain indeces for both of those junctions
 
 var optimalPairs = {
    "Holy" : [],
@@ -228,50 +241,59 @@ var optimalPairs = {
    "Crown" : []
 }
 
+
+// for each egg, store whether or not we have determined its optimal junction pairs
+// false = hasn't been visited
+// true = has been visited
+
 var visitedEggs = {
-   "Holy" : 0,
-   "Fenrir" : 0,
-   "Protect" : 0,
-   "Astral" : 0,
-   "Dragon" : 0,
-   "Chaos" : 0,
-   "Booster" : 0,
-   "Flare" : 1,
-   "Wind" : 1,
-   "Aqua" :1,
-   "Stone" : 1,
-   "Dust" : 0,
-   "Decrease" : 0,
-   "Lava" : 0,
-   "Heat" : 0,
-   "Mist" : 0,
-   "Sand" : 0,
-   "Burst" : 0,
-   "Darkness" : 0,
-   "Bomb" : 0,
-   "Thunder" : 0,
-   "Frost" : 0,
-   "Leaf" : 0,
-   "Restore" : 0,
-   "Void" : 0,
-   "Star" : 0,
-   "Lightning" : 0,
-   "Icicle" : 0,
-   "Forest" : 0,
-   "Fairy" : 0,
-   "Calamity" : 0,
-   "Volcano" : 0,
-   "Cyclone" : 0,
-   "Rainbow" : 0,
-   "Gravity" : 0,
-   "Life" : 0,
-   "Ether" : 0,
-   "Cluster" : 0,
-   "Photon" : 0,
-   "Blizzard" : 0,
-   "Soul" : 0,
-   "Crown" : 0
+   "Holy" : false,
+   "Fenrir" : false,
+   "Protect" : false,
+   "Astral" : false,
+   "Dragon" : false,
+   "Chaos" : false,
+   "Booster" : false,
+   "Flare" : true,
+   "Wind" : true,
+   "Aqua" :true,
+   "Stone" : true,
+   "Dust" : false,
+   "Decrease" : false,
+   "Lava" : false,
+   "Heat" : false,
+   "Mist" : false,
+   "Sand" : false,
+   "Burst" : false,
+   "Darkness" : false,
+   "Bomb" : false,
+   "Thunder" : false,
+   "Frost" : false,
+   "Leaf" : false,
+   "Restore" : false,
+   "Void" : false,
+   "Star" : false,
+   "Lightning" : false,
+   "Icicle" : false,
+   "Forest" : false,
+   "Fairy" : false,
+   "Calamity" : false,
+   "Volcano" : false,
+   "Cyclone" : false,
+   "Rainbow" : false,
+   "Gravity" : false,
+   "Life" : false,
+   "Ether" : false,
+   "Cluster" : false,
+   "Photon" : false,
+   "Blizzard" : false,
+   "Soul" : false,
+   "Crown" : false
 }
+
+// for each egg, how many level one eggs do you need to produce it?
+// level one eggs are defined as having 1 cost, because you can't
+// produce them from other eggs
 
 var minEggsToMake = {
    "Holy" : 0,
@@ -318,6 +340,7 @@ var minEggsToMake = {
    "Crown" : 0
 }
 
+/*
 function debugDump(){
    for (var key in visitedEggs){
       if (visitedEggs.hasOwnProperty(key)){
@@ -335,5 +358,184 @@ function debugDump(){
       if (minEggsToMake.hasOwnProperty(key)){
          console.log(key + " minEggsToMake: " + minEggsToMake[key]);
       }
+   }
+}
+*/
+
+// given a string containing the name of an egg. e.g. 'Flare', 'Wind', etc.
+// find its minimum cost
+//
+// calls exploreEggNode and therefore has the same invariants
+
+function exploreEgg(eggName){
+   var rootEgg = new eggNode(eggName);
+   exploreEggNode(rootEgg);
+}
+
+// given an eggNode called 'rootEgg', find its minimum cost
+//
+// invariants to achieve: any eggNode that had exploreEgg called on it
+// will have its respective egg ('Flare', 'Wind', etc.) visited, and
+// therefore its optimal junction pairs determined
+
+function exploreEggNode(rootEgg){
+   if (rootEgg.name == ''){
+      console.log("Error: exploreEggNode called on un-named egg.");
+      return;
+   }
+
+   if (wasVisited(rootEgg.name)){
+      return;
+   }
+
+   if (rootEgg.junctionPath[rootEgg.name] == 1){
+      rootEgg.minCost = -1;
+      rootEgg.explored = true;
+      return;
+   }
+
+   var junctions = eggData[rootEgg.name].junctionPairs;
+
+   // for all rootEgg's junction pairs
+   for (var i=0; i<junctions.length; i++){
+      var j = new junction();
+      j.junctionID = i;
+
+      addChildJunctionToEggNode(j, rootEgg);
+
+      var leftEgg = new eggNode(junctions[i][0]);
+      var rightEgg = new eggNode(junctions[i][1]);
+
+      addLeftEggToJunction(leftEgg, j);
+      addRightEggToJunction(rightEgg, j);
+
+      leftEgg.junctionPath[rootEgg.name] = 1;
+      rightEgg.junctionPath[rootEgg.name] = 1;
+
+      if (wasVisited(leftEgg.name)){
+         leftEgg.minCost = minCost(leftEgg.name);
+         leftEgg.explored = true;
+      }
+      
+      if (wasVisited(rightEgg.name)){
+         rightEgg.minCost = minCost(rightEgg.name);
+         rightEgg.explored = true;
+      }
+
+      if (wasVisited(leftEgg.name) && wasVisited(rightEgg.name)){
+         j.minCost = leftEgg.minCost + rightEgg.minCost;
+         if (rootEgg.minCost > j.minCost || rootEgg.minCost == -1)
+            rootEgg.minCost = j.minCost;
+         j.explored = true;
+      }else{
+         rootEgg.unexploredJunctionList.push(j);
+      }
+   }
+
+   // while the root egg has unexplored junctions
+   while (rootEgg.unexploredJunctionList.length > 0){
+      var j = rootEgg.unexploredJunctionList.shift(); // remove first element
+
+      if (j.leftChildEgg.explored == true && j.rightChildEgg.explored == false){
+         if (isLevelOneEgg(j.rightChildEgg.name)){
+            console.log("Error: Lv.1 Right Egg, both explored.");
+         }else{
+            var tsum = 2 + j.leftChildEgg.minCost;
+            if (tsum > rootEgg.minCost){
+               j.rightChildEgg.explored = true;
+               j.explored = true;
+               j.minCost = tsum;
+               continue;
+            }
+         }
+      }
+
+      if (j.leftChildEgg.explored == false && j.rightChildEgg.explored == true){
+         if (isLevelOneEgg(j.leftChildEgg.name)){
+            console.log("Error: Lv.1 Left Egg, both explored.");
+         }else{
+            var tsum = 2 + j.rightChildEgg.minCost;
+            if (tsum > rootEgg.minCost){
+               j.leftChildEgg.explored = true;
+               j.explored = true;
+               j.minCost = tsum;
+               continue;
+            }
+         }
+      }
+
+      if (j.leftChildEgg.explored == false){
+         exploreEggNode(j.leftChildEgg) // RECUR LEFT
+      }
+
+      if (j.rightChildEgg.explored == false){
+         exploreEggNode(j.rightChildEgg) // RECUR RIGHT
+      }
+
+      if (j.leftChildEgg.exploreed == true && j.leftChildEgg.minCost == -1){
+         j.minCost = -1;
+         j.explored = true;
+         continue;
+      } else if (j.rightChildEgg.explored == true && j.rightChildEgg.minCost == -1){
+         j.minCost = -1;
+         j.explored = true;
+         continue;
+      } else {
+         j.minCost = j.leftChildEgg.minCost + j.rightChildEgg.minCost;
+         if (rootEgg.minCost > j.minCost || rootEgg.minCost == -1)
+            rootEgg.minCost = j.minCost;
+         j.explored = true;         
+      }
+   }
+
+   // set optimalPairs
+   for (var i=0; i<rootEgg.childJunctions.length; i++){
+      if (rootEgg.childJunctions[i].minCost == rootEgg.minCost){
+         optimalPairs[rootEgg.name].push(rootEgg.childJunctions[i].junctionID);
+      }
+   }
+
+   // set visitedEggs
+   visitedEggs[rootEgg.name] = true;
+
+   // set minEggsToMake
+   minEggsToMake[rootEgg.name] = rootEgg.minCost;
+
+}
+
+function addChildJunctionToEggNode(childJunction, targetEggNode){
+   childJunction.parentEggNode = targetEggNode;
+   targetEggNode.childJunctions.push(childJunction);
+}
+
+function addParentJunctionToEggNode(parentJunction, targetEggNode){
+   targetEggNode.parentJunction = parentJunction;
+}
+
+function addLeftEggToJunction(leftEggNode, targetJunction){
+   leftEggNode.parentJunction = targetJunction;
+   targetJunction.leftChildEgg = leftEggNode;
+}
+
+function addRightEggToJunction(rightEggNode, targetJunction){
+   rightEggNode.parentJunction = targetJunction;
+   targetJunction.rightChildEgg = rightEggNode;
+}
+
+function wasVisited(eggName){
+   return visitedEggs[eggName];
+}
+
+function minCost(eggName){
+   return minEggsToMake[eggName];
+}
+
+function isLevelOneEgg(eggName){
+   switch (eggName){
+      case "Flare": return true;
+      case "Wind": return true;
+      case "Aqua": return true;
+      case "Stone": return true;
+      default: return false;
    }
 }
