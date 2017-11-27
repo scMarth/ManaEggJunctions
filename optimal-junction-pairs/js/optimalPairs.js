@@ -409,8 +409,8 @@ function exploreEggNode(rootEgg){
       addLeftEggToJunction(leftEgg, j);
       addRightEggToJunction(rightEgg, j);
 
-      leftEgg.junctionPath[rootEgg.name] = 1;
-      rightEgg.junctionPath[rootEgg.name] = 1;
+      fetchJunctionPath(leftEgg);
+      fetchJunctionPath(rightEgg);
 
       if (wasVisited(leftEgg.name)){
          leftEgg.minCost = minCost(leftEgg.name);
@@ -466,6 +466,11 @@ function exploreEggNode(rootEgg){
 
       if (j.leftChildEgg.explored == false){
          exploreEggNode(j.leftChildEgg) // RECUR LEFT
+      }
+
+      if (j.leftChildEgg.explored == true && j.leftChildEgg.minCost == -1){
+         j.rightChildEgg.explored = true;
+         j.rightChildEgg.minCost = -1;
       }
 
       if (j.rightChildEgg.explored == false){
@@ -537,5 +542,22 @@ function isLevelOneEgg(eggName){
       case "Aqua": return true;
       case "Stone": return true;
       default: return false;
+   }
+}
+
+function fetchJunctionPath(targetEggNode){
+   var currNode = targetEggNode;
+
+   if (currNode.parentJunction != null){
+      currNode = currNode.parentJunction;
+      currNode = currNode.parentEggNode;
+   }
+
+   targetEggNode.junctionPath[currNode.name] = 1;
+
+   for (var key in currNode.junctionPath){
+      if (currNode.junctionPath.hasOwnProperty(key)){
+         targetEggNode.junctionPath[key] = 1;
+      }
    }
 }
