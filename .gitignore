@@ -1,2 +1,8 @@
+# Compiled Python Files
+*.pyc
+
+# Misc.
+grepresult
+
 # Text Files
 Notes.txt
