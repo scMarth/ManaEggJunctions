@@ -1,1 +1,1 @@
-maybe try some sort of BFS
+Maybe try some sort of BFS? Normal BFS might not be possible because the tree isn't already constructed.
