@@ -1,0 +1,2 @@
+- multiprocessing
+- keep cache of minimums for lower level eggs, start at lower level eggs and go up to higher level eggs to minimize redundant computations
