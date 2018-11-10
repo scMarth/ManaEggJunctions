@@ -2,8 +2,7 @@
 
 Assumption: may need to be proven: If you have an egg and traverse its junctions in breadth-first order,
 then the first immediate child junction of that egg to have its cost computed is the lowest cost junction.
-
-Doing a brute-force until all immediate child junctions of the root egg node have its lowest cost found seems to work but takes forever.
+I feel like the correctness of this claim can be proven with induction.
 
 '''
 import datetime
@@ -24,7 +23,7 @@ def add_right_egg_to_junction(right_egg_node, target_junction):
     right_egg_node.parent_junction = target_junction
     target_junction.right_child_egg = right_egg_node
 
-def update_parent_costs(junction): # rename and recode?
+def update_junction_parent_costs(junction):
     curr_junction = junction
     
     while True:
@@ -155,7 +154,7 @@ def bfs(egg_name, optimal_pairs_vars, debug):
                     child_junction.min_cost = 2
                 left_egg.min_cost = 1
                 right_egg.min_cost = 1
-                update_parent_costs(child_junction)
+                update_junction_parent_costs(child_junction)
                 continue
                 # return curr_node
 
@@ -203,6 +202,5 @@ for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k
     print("")
 
 absolute_end_time = datetime.datetime.now()
-
 print("Total time elapsed: " + str(absolute_end_time - absolute_start_time))
 
