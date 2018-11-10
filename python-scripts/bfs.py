@@ -6,7 +6,7 @@ then the first immediate child junction of that egg to have its cost computed is
 Doing a brute-force until all immediate child junctions of the root egg node have its lowest cost found seems to work but takes forever.
 
 '''
-
+import datetime
 import sys
 import egg_data
 import optimal_pairs_data
@@ -190,14 +190,28 @@ def bfs(egg_name, debug):
 # result_egg = bfs(root_egg_name, debug=True)
 # print("Minimum cost: " + str(result_egg.min_cost))
 
-root_egg_name = "Protect"
-print(root_egg_name + "...")
-result_egg = bfs(root_egg_name, debug=False)
-print("Minimum cost: " + str(result_egg.min_cost))
+# root_egg_name = "Protect"
+# print(root_egg_name + "...")
+# result_egg = bfs(root_egg_name, debug=False)
+# print("Minimum cost: " + str(result_egg.min_cost))
 
-# for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
-#     print(root_egg_name)
-#     result_egg = bfs(root_egg_name, debug=False)
-#     print("\tMinimum cost: " + str(result_egg.min_cost))
-#     print("")
+absolute_start_time = datetime.datetime.now()
+
+for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
+    print(root_egg_name + " ; Level " + str(egg_data.egg_data[root_egg_name]['eggLevel']))
+    start_time = datetime.datetime.now()
+    result_egg = bfs(root_egg_name, debug=False)
+    end_time = datetime.datetime.now()
+    print("\t" + str(end_time - start_time))
+    print("\tMinimum cost: " + str(result_egg.min_cost))
+    for child_junction in result_egg.child_junctions:
+        if child_junction.min_cost == result_egg.min_cost:
+            left_egg = child_junction.left_child_egg
+            right_egg = child_junction.right_child_egg
+            print("\t[" + left_egg.name + ", " + right_egg.name + "] ; junction index = " + str(child_junction.junction_id))
+    print("")
+
+absolute_end_time = datetime.datetime.now()
+
+print("Total time elapsed: " + str(absolute_end_time - absolute_start_time))
 
