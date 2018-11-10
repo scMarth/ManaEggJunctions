@@ -3,7 +3,7 @@
 Assumption: may need to be proven: If you have an egg and traverse its junctions in breadth-first order,
 then the first immediate child junction of that egg to have its cost computed is the lowest cost junction.
 
-Currently works, but only finds one minimum cost junction (there may be more than one)
+Doing a brute-force until all immediate child junctions of the root egg node have its lowest cost found seems to work but takes forever.
 
 '''
 
@@ -71,6 +71,20 @@ def update_parent_costs(junction):
         else:
             break
 
+def print_path(egg):
+    curr_egg = egg
+    out_str = curr_egg.name
+    while True:
+        try:
+            curr_egg = curr_egg = curr_egg.parent_junction.parent_egg_node
+            out_str += " <- " + curr_egg.name
+        except:
+            print(out_str)
+            return
+
+
+            
+
 def bfs(egg_name, debug):
     root_egg = EggNode(egg_name)
     
@@ -78,10 +92,20 @@ def bfs(egg_name, debug):
     visited = []
 
     unvisited.append(root_egg)
+    num_child_junctions = len(egg_data.egg_data[egg_name]['junctionPairs'])
 
     # while unvisited != []:
-    while len([x for x in root_egg.child_junctions if x.min_cost != -1]) == 0:
+    # while len([x for x in root_egg.child_junctions if x.min_cost != -1]) == 0:
+    while len([x for x in root_egg.child_junctions if x.min_cost != -1]) < num_child_junctions:
+        if debug:
+            print("unvisited length: " + str(len(unvisited)))
+        if unvisited == []:
+            break
         curr_node = unvisited.pop(0) # remove and return item 0
+
+        # print_path(curr_node)
+        # print("")
+
         if debug:
             print(curr_node.name)
 
@@ -115,20 +139,24 @@ def bfs(egg_name, debug):
                     del right_egg
                     del new_junction
                     continue # don't add the child if it will cause a cycle
-                else:
-                    # copy the previous egg's junction path for each egg
-                    for egg_name_in_path in parent_egg_junction_path:
-                        left_egg.junction_path[egg_name_in_path] = True
-                        right_egg.junction_path[egg_name_in_path] = True
+                # copy the previous egg's junction path for each egg
+                for egg_name_in_path in parent_egg_junction_path:
+                    left_egg.junction_path[egg_name_in_path] = True
+                    right_egg.junction_path[egg_name_in_path] = True
             # put the current egg node in the junction path of these children
             left_egg.junction_path[curr_node.name] = True
             right_egg.junction_path[curr_node.name] = True
+
+        if debug:
+            print("number of child junctions: " + str(len(curr_node.child_junctions)))
 
         for child_junction in curr_node.child_junctions:
             left_egg = child_junction.left_child_egg
             right_egg = child_junction.right_child_egg
             if debug:
                 print("\t" + left_egg.name + ", " + right_egg.name)
+                print("\t\tLeft egg: " + str(len(left_egg.junction_path)))
+                print("\t\tRight egg: " + str(len(right_egg.junction_path)))
             if left_egg.egg_level == 1 and right_egg.egg_level == 1:
                 if left_egg.name == right_egg.name:
                     child_junction.min_cost = 1
@@ -141,6 +169,7 @@ def bfs(egg_name, debug):
                 # return curr_node
 
         if debug:
+            print("================================================")
             raw_input("Press Enter to continue...")
 
         for child_junction in curr_node.child_junctions:
@@ -156,14 +185,19 @@ def bfs(egg_name, debug):
         visited.append(curr_node)
     return root_egg
 
-# root_egg_name = "Leaf"
+# root_egg_name = "Protect"
 # print(root_egg_name + "...")
 # result_egg = bfs(root_egg_name, debug=True)
 # print("Minimum cost: " + str(result_egg.min_cost))
 
-for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
-    print(root_egg_name)
-    result_egg = bfs(root_egg_name, debug=False)
-    print("\tMinimum cost: " + str(result_egg.min_cost))
-    print("")
+root_egg_name = "Protect"
+print(root_egg_name + "...")
+result_egg = bfs(root_egg_name, debug=False)
+print("Minimum cost: " + str(result_egg.min_cost))
+
+# for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
+#     print(root_egg_name)
+#     result_egg = bfs(root_egg_name, debug=False)
+#     print("\tMinimum cost: " + str(result_egg.min_cost))
+#     print("")
 
