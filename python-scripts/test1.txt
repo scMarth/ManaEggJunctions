@@ -1,0 +1,245 @@
+Dust ; Level 0
+
+	Minimum cost: 2
+	[Flare, Aqua] ; junction index = 0
+	[Wind, Stone] ; junction index = 1
+
+Flare ; Level 1
+
+	Minimum cost: 1
+	[Flare, Flare] ; junction index = 0
+
+Aqua ; Level 1
+
+	Minimum cost: 1
+	[Aqua, Aqua] ; junction index = 0
+
+Stone ; Level 1
+
+	Minimum cost: 1
+	[Stone, Stone] ; junction index = 0
+
+Wind ; Level 1
+
+	Minimum cost: 1
+	[Wind, Wind] ; junction index = 0
+
+Lava ; Level 2
+
+	Minimum cost: 2
+	[Flare, Stone] ; junction index = 0
+
+Sand ; Level 2
+
+	Minimum cost: 2
+	[Stone, Aqua] ; junction index = 0
+
+Heat ; Level 2
+
+	Minimum cost: 2
+	[Wind, Flare] ; junction index = 0
+
+Mist ; Level 2
+
+	Minimum cost: 2
+	[Aqua, Wind] ; junction index = 0
+
+Leaf ; Level 3
+
+	Minimum cost: 3
+	[Sand, Stone] ; junction index = 0
+	[Sand, Aqua] ; junction index = 1
+
+Bomb ; Level 3
+
+	Minimum cost: 3
+	[Lava, Flare] ; junction index = 0
+	[Lava, Stone] ; junction index = 1
+
+Burst ; Level 3
+
+	Minimum cost: 4
+	[Lava, Mist] ; junction index = 0
+	[Heat, Sand] ; junction index = 1
+
+Frost ; Level 3
+
+	Minimum cost: 3
+	[Mist, Aqua] ; junction index = 0
+	[Mist, Wind] ; junction index = 1
+
+Thunder ; Level 3
+
+	Minimum cost: 3
+	[Heat, Wind] ; junction index = 0
+	[Heat, Flare] ; junction index = 1
+
+Darkness ; Level 4
+
+	Minimum cost: 6
+	[Dust, Forest] ; junction index = 0
+	[Burst, Sand] ; junction index = 1
+
+Star ; Level 4
+
+	Minimum cost: 4
+	[Bomb, Flare] ; junction index = 0
+	[Bomb, Stone] ; junction index = 1
+	[Lava, Heat] ; junction index = 2
+
+Forest ; Level 4
+
+	Minimum cost: 4
+	[Leaf, Stone] ; junction index = 0
+	[Leaf, Aqua] ; junction index = 1
+	[Sand, Lava] ; junction index = 2
+
+Icicle ; Level 4
+
+	Minimum cost: 4
+	[Frost, Aqua] ; junction index = 0
+	[Frost, Wind] ; junction index = 1
+	[Mist, Sand] ; junction index = 2
+
+Lightning ; Level 4
+
+	Minimum cost: 4
+	[Thunder, Wind] ; junction index = 0
+	[Thunder, Flare] ; junction index = 1
+	[Heat, Mist] ; junction index = 2
+
+Decrease ; Level 4
+
+	Minimum cost: 4
+	[Dust, Mist] ; junction index = 0
+
+Booster ; Level 4
+
+	Minimum cost: 4
+	[Dust, Lava] ; junction index = 0
+
+Rainbow ; Level 5
+
+	Minimum cost: 6
+	[Icicle, Mist] ; junction index = 0
+	[Icicle, Sand] ; junction index = 1
+	[Frost, Leaf] ; junction index = 2
+
+Gravity ; Level 5
+
+	Minimum cost: 6
+	[Forest, Sand] ; junction index = 0
+	[Forest, Lava] ; junction index = 1
+	[Leaf, Bomb] ; junction index = 2
+
+Cyclone ; Level 5
+
+	Minimum cost: 6
+	[Lightning, Heat] ; junction index = 0
+	[Lightning, Mist] ; junction index = 1
+	[Thunder, Frost] ; junction index = 2
+
+Volcano ; Level 5
+
+	Minimum cost: 6
+	[Star, Lava] ; junction index = 0
+	[Star, Heat] ; junction index = 1
+	[Bomb, Thunder] ; junction index = 2
+
+Fairy ; Level 5
+
+	Minimum cost: 8
+	[Star, Icicle] ; junction index = 0
+	[Lightning, Forest] ; junction index = 1
+
+Restore ; Level 6
+
+	Minimum cost: 8
+	[Burst, Booster] ; junction index = 0
+	[Burst, Decrease] ; junction index = 1
+
+Blizzard ; Level 6
+
+	Minimum cost: 8
+	[Rainbow, Mist] ; junction index = 0
+	[Rainbow, Sand] ; junction index = 1
+	[Icicle, Lightning] ; junction index = 3
+
+Photon ; Level 6
+
+	Minimum cost: 8
+	[Cyclone, Heat] ; junction index = 0
+	[Cyclone, Mist] ; junction index = 1
+	[Lightning, Star] ; junction index = 3
+
+Cluster ; Level 6
+
+	Minimum cost: 8
+	[Volcano, Lava] ; junction index = 0
+	[Volcano, Heat] ; junction index = 1
+	[Star, Forest] ; junction index = 3
+
+Soul ; Level 6
+
+	Minimum cost: 8
+	[Gravity, Sand] ; junction index = 0
+	[Gravity, Lava] ; junction index = 1
+	[Forest, Icicle] ; junction index = 3
+
+Protect ; Level 7
+
+	Minimum cost: 12
+	[Restore, Icicle] ; junction index = 0
+
+Astral ; Level 7
+
+	Minimum cost: 12
+	[Restore, Star] ; junction index = 0
+
+Life ; Level 7
+
+	Minimum cost: 16
+	[Cluster, Blizzard] ; junction index = 0
+	[Photon, Soul] ; junction index = 1
+
+Void ; Level 7
+
+	Minimum cost: 24
+	[Protect, Astral] ; junction index = 1
+
+Fenrir ; Level 8
+
+	Minimum cost: 24
+	[Life, Blizzard] ; junction index = 0
+
+Dragon ; Level 8
+
+	Minimum cost: 24
+	[Life, Photon] ; junction index = 0
+
+Calamity ; Level 8
+
+	Minimum cost: 24
+	[Life, Cluster] ; junction index = 0
+
+Crown ; Level 8
+
+	Minimum cost: 24
+	[Life, Soul] ; junction index = 0
+
+Chaos ; Level 9
+
+	Minimum cost: 48
+	[Crown, Dragon] ; junction index = 0
+
+Holy ; Level 9
+
+	Minimum cost: 48
+	[Crown, Fenrir] ; junction index = 0
+
+Ether ; Level 9
+
+	Minimum cost: 48
+	[Crown, Calamity] ; junction index = 0
+
+
