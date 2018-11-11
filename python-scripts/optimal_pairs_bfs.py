@@ -38,9 +38,8 @@ def update_costs(node, node_type):
             parent_junction = node.parent_junction
             if not parent_junction:
                 break
-            if parent_junction.left_child_egg.min_cost != 1 and parent_junction.right_child_egg.min_cost != 1:
-                if parent_junction.left_child_egg.min_cost + parent_junction.right_child_egg.min_cost < \
-                parent_junction.min_cost or parent_junction.min_cost == -1:
+            if parent_junction.left_child_egg.min_cost != -1 and parent_junction.right_child_egg.min_cost != -1:
+                if parent_junction.left_child_egg.min_cost + parent_junction.right_child_egg.min_cost < parent_junction.min_cost or parent_junction.min_cost == -1:
                     parent_junction.min_cost = parent_junction.left_child_egg.min_cost + parent_junction.right_child_egg.min_cost
                 else:
                     break
@@ -166,31 +165,32 @@ def bfs(egg_name, optimal_pairs_vars, debug):
 absolute_start_time = datetime.datetime.now()
 optimal_pairs_vars = optimal_pairs_data.OptimalPairsData()
 
-bfs("Lava", optimal_pairs_vars, debug=True)
+# bfs("Lava", optimal_pairs_vars, debug=True)
 
-# for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
-#     print(root_egg_name + " ; Level " + str(egg_data.egg_data[root_egg_name]['eggLevel']))
-#     start_time = datetime.datetime.now()
+for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
+    start_time = datetime.datetime.now()
     
-#     result_egg = bfs(root_egg_name, optimal_pairs_vars=optimal_pairs_vars, debug=False)
+    result_egg = bfs(root_egg_name, optimal_pairs_vars=optimal_pairs_vars, debug=False)
+    print(root_egg_name + " ; Level " + str(egg_data.egg_data[root_egg_name]['eggLevel']) + " ; Minimum cost: " + str(result_egg.min_cost))
 
-#     # update data on optimal pairs
-#     optimal_pairs_vars.min_eggs_to_make[result_egg.name] = result_egg.min_cost
-#     optimal_pairs_vars.visited_eggs[result_egg.name] = True
+    # update data on optimal pairs
+    optimal_pairs_vars.min_eggs_to_make[result_egg.name] = result_egg.min_cost
+    optimal_pairs_vars.visited_eggs[result_egg.name] = True
 
-#     end_time = datetime.datetime.now()
-#     print("\t" + str(end_time - start_time))
-#     print("\tMinimum cost: " + str(result_egg.min_cost))
-#     for child_junction in result_egg.child_junctions:
-#         if child_junction.min_cost == result_egg.min_cost:
-#             left_egg = child_junction.left_child_egg
-#             right_egg = child_junction.right_child_egg
-#             print("\t[" + left_egg.name + ", " + right_egg.name + "] ; junction index = " + str(child_junction.junction_id))
+    end_time = datetime.datetime.now()
+    # print("\t" + str(end_time - start_time))
+    # print("\tMinimum cost: " + str(result_egg.min_cost))
+    for child_junction in result_egg.child_junctions:
+        if child_junction.min_cost == result_egg.min_cost:
+            left_egg = child_junction.left_child_egg
+            right_egg = child_junction.right_child_egg
+            print("\t[" + left_egg.name + ", " + right_egg.name + "]")
+            # print("\t[" + left_egg.name + ", " + right_egg.name + "] ; junction index = " + str(child_junction.junction_id))
 
-#             # store optimal junctions
-#             optimal_pairs_vars.optimal_pairs[result_egg.name].append(child_junction.junction_id)
-#     print("")
+            # store optimal junctions
+            optimal_pairs_vars.optimal_pairs[result_egg.name].append(child_junction.junction_id)
+    print("")
 
-# absolute_end_time = datetime.datetime.now()
-# print("Total time elapsed: " + str(absolute_end_time - absolute_start_time))
+absolute_end_time = datetime.datetime.now()
+print("Total time elapsed: " + str(absolute_end_time - absolute_start_time))
 

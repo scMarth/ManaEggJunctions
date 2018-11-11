@@ -1,16 +1,16 @@
 Dust ; Level 0
-	0:00:00.000064
+	0:00:00.000085
 	Minimum cost: 2
 	[Flare, Aqua] ; junction index = 0
 	[Wind, Stone] ; junction index = 1
 
 Flare ; Level 1
-	0:00:00.000061
+	0:00:00.000058
 	Minimum cost: 1
 	[Flare, Flare] ; junction index = 0
 
 Aqua ; Level 1
-	0:00:00.000048
+	0:00:00.000035
 	Minimum cost: 1
 	[Aqua, Aqua] ; junction index = 0
 
@@ -20,140 +20,140 @@ Stone ; Level 1
 	[Stone, Stone] ; junction index = 0
 
 Wind ; Level 1
-	0:00:00.000040
+	0:00:00.000047
 	Minimum cost: 1
 	[Wind, Wind] ; junction index = 0
 
 Lava ; Level 2
-	0:00:00.001294
+	0:00:00.001358
 	Minimum cost: 2
 	[Flare, Stone] ; junction index = 0
 
 Sand ; Level 2
-	0:00:00.002198
+	0:00:00.002159
 	Minimum cost: 2
 	[Stone, Aqua] ; junction index = 0
 
 Heat ; Level 2
-	0:00:00.000536
+	0:00:00.000528
 	Minimum cost: 2
 	[Wind, Flare] ; junction index = 0
 
 Mist ; Level 2
-	0:00:00.000506
+	0:00:00.000511
 	Minimum cost: 2
 	[Aqua, Wind] ; junction index = 0
 
 Leaf ; Level 3
-	0:00:00.013176
+	0:00:00.010104
 	Minimum cost: 3
 	[Sand, Stone] ; junction index = 0
 	[Sand, Aqua] ; junction index = 1
 
 Bomb ; Level 3
-	0:00:00.005210
+	0:00:00.003958
 	Minimum cost: 3
 	[Lava, Flare] ; junction index = 0
 	[Lava, Stone] ; junction index = 1
 
 Burst ; Level 3
-	0:00:00.000568
+	0:00:00.000454
 	Minimum cost: 4
 	[Lava, Mist] ; junction index = 0
 	[Heat, Sand] ; junction index = 1
 
 Frost ; Level 3
-	0:00:00.006815
+	0:00:00.005230
 	Minimum cost: 3
 	[Mist, Aqua] ; junction index = 0
 	[Mist, Wind] ; junction index = 1
 
 Thunder ; Level 3
-	0:00:00.006601
+	0:00:00.003438
 	Minimum cost: 3
 	[Heat, Wind] ; junction index = 0
 	[Heat, Flare] ; junction index = 1
 
 Darkness ; Level 4
-	0:00:00.000463
+	0:00:00.000426
 	Minimum cost: 6
 	[Dust, Forest] ; junction index = 0
 	[Burst, Sand] ; junction index = 1
 
 Star ; Level 4
-	0:00:00.000276
+	0:00:00.000303
 	Minimum cost: 4
 	[Bomb, Flare] ; junction index = 0
 	[Bomb, Stone] ; junction index = 1
 	[Lava, Heat] ; junction index = 2
 
 Forest ; Level 4
-	0:00:00.000111
+	0:00:00.000122
 	Minimum cost: 4
 	[Leaf, Stone] ; junction index = 0
 	[Leaf, Aqua] ; junction index = 1
 	[Sand, Lava] ; junction index = 2
 
 Icicle ; Level 4
-	0:00:00.000152
+	0:00:00.000121
 	Minimum cost: 4
 	[Frost, Aqua] ; junction index = 0
 	[Frost, Wind] ; junction index = 1
 	[Mist, Sand] ; junction index = 2
 
 Lightning ; Level 4
-	0:00:00.000165
+	0:00:00.000128
 	Minimum cost: 4
 	[Thunder, Wind] ; junction index = 0
 	[Thunder, Flare] ; junction index = 1
 	[Heat, Mist] ; junction index = 2
 
 Decrease ; Level 4
-	0:00:00.000140
+	0:00:00.000119
 	Minimum cost: 4
 	[Dust, Mist] ; junction index = 0
 
 Booster ; Level 4
-	0:00:00.000151
+	0:00:00.000137
 	Minimum cost: 4
 	[Dust, Lava] ; junction index = 0
 
 Rainbow ; Level 5
-	0:00:00.000151
+	0:00:00.000163
 	Minimum cost: 6
 	[Icicle, Mist] ; junction index = 0
 	[Icicle, Sand] ; junction index = 1
 	[Frost, Leaf] ; junction index = 2
 
 Gravity ; Level 5
-	0:00:00.000164
+	0:00:00.000156
 	Minimum cost: 6
 	[Forest, Sand] ; junction index = 0
 	[Forest, Lava] ; junction index = 1
 	[Leaf, Bomb] ; junction index = 2
 
 Cyclone ; Level 5
-	0:00:00.000098
+	0:00:00.000123
 	Minimum cost: 6
 	[Lightning, Heat] ; junction index = 0
 	[Lightning, Mist] ; junction index = 1
 	[Thunder, Frost] ; junction index = 2
 
 Volcano ; Level 5
-	0:00:00.000093
+	0:00:00.000111
 	Minimum cost: 6
 	[Star, Lava] ; junction index = 0
 	[Star, Heat] ; junction index = 1
 	[Bomb, Thunder] ; junction index = 2
 
 Fairy ; Level 5
-	0:00:00.000082
+	0:00:00.000094
 	Minimum cost: 8
 	[Star, Icicle] ; junction index = 0
 	[Lightning, Forest] ; junction index = 1
 
 Restore ; Level 6
-	0:00:00.000202
+	0:00:00.000167
 	Minimum cost: 8
 	[Burst, Booster] ; junction index = 0
 	[Burst, Decrease] ; junction index = 1
@@ -166,80 +166,80 @@ Blizzard ; Level 6
 	[Icicle, Lightning] ; junction index = 3
 
 Photon ; Level 6
-	0:00:00.000131
+	0:00:00.000136
 	Minimum cost: 8
 	[Cyclone, Heat] ; junction index = 0
 	[Cyclone, Mist] ; junction index = 1
 	[Lightning, Star] ; junction index = 3
 
 Cluster ; Level 6
-	0:00:00.000115
+	0:00:00.000124
 	Minimum cost: 8
 	[Volcano, Lava] ; junction index = 0
 	[Volcano, Heat] ; junction index = 1
 	[Star, Forest] ; junction index = 3
 
 Soul ; Level 6
-	0:00:00.000111
+	0:00:00.000124
 	Minimum cost: 8
 	[Gravity, Sand] ; junction index = 0
 	[Gravity, Lava] ; junction index = 1
 	[Forest, Icicle] ; junction index = 3
 
 Protect ; Level 7
-	0:00:00.000502
+	0:00:00.000501
 	Minimum cost: 12
 	[Restore, Icicle] ; junction index = 0
 
 Astral ; Level 7
-	0:00:00.000274
+	0:00:00.000286
 	Minimum cost: 12
 	[Restore, Star] ; junction index = 0
 
 Life ; Level 7
-	0:00:00.000050
+	0:00:00.000061
 	Minimum cost: 16
 	[Cluster, Blizzard] ; junction index = 0
 	[Photon, Soul] ; junction index = 1
 
 Void ; Level 7
-	0:00:00.000072
+	0:00:00.000085
 	Minimum cost: 24
 	[Protect, Astral] ; junction index = 1
 
 Fenrir ; Level 8
-	0:00:00.000126
+	0:00:00.000139
 	Minimum cost: 24
 	[Life, Blizzard] ; junction index = 0
 
 Dragon ; Level 8
-	0:00:00.000073
+	0:00:00.000081
 	Minimum cost: 24
 	[Life, Photon] ; junction index = 0
 
 Calamity ; Level 8
-	0:00:00.000073
+	0:00:00.000061
 	Minimum cost: 24
 	[Life, Cluster] ; junction index = 0
 
 Crown ; Level 8
-	0:00:00.000050
+	0:00:00.000068
 	Minimum cost: 24
 	[Life, Soul] ; junction index = 0
 
 Chaos ; Level 9
-	0:00:00.000128
+	0:00:00.000140
 	Minimum cost: 48
 	[Crown, Dragon] ; junction index = 0
 
 Holy ; Level 9
-	0:00:00.000074
+	0:00:00.000083
 	Minimum cost: 48
 	[Crown, Fenrir] ; junction index = 0
 
 Ether ; Level 9
-	0:00:00.000050
+	0:00:00.000057
 	Minimum cost: 48
 	[Crown, Calamity] ; junction index = 0
 
-Total time elapsed: 0:00:00.043782
+Total time elapsed: 0:00:00.034754
