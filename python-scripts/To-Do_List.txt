@@ -1,4 +1,3 @@
-- multiprocessing
 - cleanup files
 - create json file for html viewer
 
