@@ -21,7 +21,7 @@ div#egg-data-div{
    background-color: #202020;
    margin-right: 20px;
    padding: 20px;
-   height:600px;
+   height:560px;
 }
 
 .eggNameDiv{
@@ -47,7 +47,7 @@ div#egg-data-div{
 }
 
 
-.spellCountDiv, .eggTitle{
+.minCountDiv, .spellCountDiv, .eggTitle{
    display: flex;
    justify-content: center;
 }
@@ -59,18 +59,31 @@ div#egg-data-div{
    font-size: 20px;
 }
 
-.spellCountSpan{
+.centerText2{
+  text-align: center;
+  display:block;
+  font-size: 14px;
+}
+
+.minCountSpan, .spellCountSpan{
+  font-size: 14px;
    display:block;
 }
 
-.spellCountNum{
+.minCountNum, .spellCountNum{
+  font-size: 14px;
    display:block;
    color: #80efaf;
    font-weight: bold;
 }
 
+.magicList {
+  height: 130px;
+}
+
 .magicList, .junctionTable{
    width:100%;
+   border-collapse: collapse;
 }
 
 .leftEgg{
@@ -90,7 +103,7 @@ div#egg-data-div{
 }
 
 .leftJunction{
-   margin-left: 50%;
+   margin-left: 10%;
 }
 
 .rightJunction{
@@ -169,4 +182,8 @@ div#egg-data-div{
    width: 50%;
    display: inline-block;
    vertical-align: top;
+}
+
+.optimalPair{
+  border: 1px solid #80efaf;
 }

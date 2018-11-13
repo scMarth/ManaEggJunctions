@@ -20,12 +20,41 @@ function getIconImageDiv(str){
 
 function renderEggData(data){
 
-   //outHTML += "num eggs:" + data.length;
-   // 42 eggs in total
-
    var eggHTML = [];
 
-   for (var key in data){
+   // get a list of keys sorted first in increasing order of egg level
+   // then by alphabetical order on egg name
+   sortedKeys = []
+   for (var i=0; i<=9; i++){
+      list_of_eggs = [];
+
+      for (var key in data)
+         if (i == data[key].eggLevel)
+            list_of_eggs.push(key);
+
+      list_of_eggs = list_of_eggs.sort();
+      for (var j in list_of_eggs)
+         sortedKeys.push(list_of_eggs[j]);
+   }
+
+   var maxSpells = "";
+   var maxJunctions = "";
+
+   for (var i in sortedKeys){
+      var key = sortedKeys[i];
+
+      if (maxSpells == "")
+         maxSpells = key;
+      else
+         if (data[maxSpells].spells.length < data[key].spells.length)
+            maxSpells = key;
+
+      if (maxJunctions == "")
+         maxJunctions = key;
+      else
+         if (data[maxJunctions].junctionPairs.length < data[key].junctionPairs.length)
+            maxJunctions = key;
+
       if (data.hasOwnProperty(key)){
          var outHTML = "";
          outHTML += "<div class='eggDiv'>";
@@ -33,23 +62,16 @@ function renderEggData(data){
 
             outHTML += "<div class='eggTitle'>";
                outHTML += "<div class='medium-" + eggColors[eggName] + " eggImage'></div>";
-
                outHTML += "<div class='eggNameDiv'>";
                   outHTML += eggName + " Egg" + " (Level <span class='mintBoldBig'>" + data[key].eggLevel + "</span>)";
                outHTML += "</div>";
             outHTML += "</div>";
-
-            outHTML += "<br>";
-
+            outHTML += "<span class='centerText'>Magic List</span><br>";
             outHTML += "<div class='spellCountDiv'>";
                outHTML += "<span class='spellCountSpan'>Spell Count&nbsp</span>";
                outHTML += "<span class='spellCountNum'>" + data[key].spells.length + "</span>";
             outHTML += "</div>";
 
-            outHTML += "<br>";
-            outHTML += "<br>";
-
-            outHTML += "<span class='centerText'>Magic List</span>";
             outHTML += "<br>";      
          
             outHTML += "<div class='magicList'>";
@@ -91,13 +113,19 @@ function renderEggData(data){
             outHTML += "<br>";
 
             outHTML += "<br>";
-            outHTML += "<span class='centerText'>Mana Egg Junction</span>";
-
+            outHTML += "<span class='centerText'>Mana Egg Junctions</span>";
             outHTML += "<br>";
+
+            // outHTML += "<span class='centerText2'>Minimum Cost: " + "<span class='spellCountNum'>" + optimal_pairs_vars.min_eggs_to_make[key] + "</span></span><br>";
+            outHTML += "<div class='minCountDiv'>";
+            outHTML += "<span class='minCountSpan'>Minimum Cost&nbsp</span>";
+            outHTML += "<span class='minCountNum'>" + optimal_pairs_vars.min_eggs_to_make[key] + "</span>";
+            outHTML += "</div><br>"
 
             outHTML += "<table class='junctionTable'>";
             for (j=0; j<data[key].junctionPairs.length; j++){
-               outHTML += "<tr>";
+               if (optimal_pairs_vars.optimal_pairs[eggName].includes(j)) outHTML += "<tr class='optimalPair'>";
+               else outHTML += "<tr>";
 
                var leftEgg = data[key].junctionPairs[j][0];
                var rightEgg = data[key].junctionPairs[j][1];
@@ -120,6 +148,8 @@ function renderEggData(data){
       }
    }
 
+   console.log("maxSpells", maxSpells);
+   console.log("maxJunctions", maxJunctions);
 
    var outHTML = "";
    outHTML += "<div class='leftColumn'>";
