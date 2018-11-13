@@ -1,0 +1,163 @@
+Here is a list of the minimum cost combinations for each mana egg, with minimum cost defined as 'how many level 1 eggs does it take to make this egg?' 
+
+Note: For level 1 eggs, their junction is still shown, 
+
+Dust ; Level 0 ; Minimum cost: 2
+	[Flare, Aqua]
+	[Wind, Stone]
+
+Flare ; Level 1 ; Minimum cost: 1
+	[Flare, Flare]
+
+Aqua ; Level 1 ; Minimum cost: 1
+	[Aqua, Aqua]
+
+Stone ; Level 1 ; Minimum cost: 1
+	[Stone, Stone]
+
+Wind ; Level 1 ; Minimum cost: 1
+	[Wind, Wind]
+
+Lava ; Level 2 ; Minimum cost: 2
+	[Flare, Stone]
+
+Sand ; Level 2 ; Minimum cost: 2
+	[Stone, Aqua]
+
+Heat ; Level 2 ; Minimum cost: 2
+	[Wind, Flare]
+
+Mist ; Level 2 ; Minimum cost: 2
+	[Aqua, Wind]
+
+Leaf ; Level 3 ; Minimum cost: 3
+	[Sand, Stone]
+	[Sand, Aqua]
+
+Bomb ; Level 3 ; Minimum cost: 3
+	[Lava, Flare]
+	[Lava, Stone]
+
+Burst ; Level 3 ; Minimum cost: 4
+	[Lava, Mist]
+	[Heat, Sand]
+
+Frost ; Level 3 ; Minimum cost: 3
+	[Mist, Aqua]
+	[Mist, Wind]
+
+Thunder ; Level 3 ; Minimum cost: 3
+	[Heat, Wind]
+	[Heat, Flare]
+
+Darkness ; Level 4 ; Minimum cost: 6
+	[Dust, Forest]
+	[Burst, Sand]
+
+Star ; Level 4 ; Minimum cost: 4
+	[Bomb, Flare]
+	[Bomb, Stone]
+	[Lava, Heat]
+
+Forest ; Level 4 ; Minimum cost: 4
+	[Leaf, Stone]
+	[Leaf, Aqua]
+	[Sand, Lava]
+
+Icicle ; Level 4 ; Minimum cost: 4
+	[Frost, Aqua]
+	[Frost, Wind]
+	[Mist, Sand]
+
+Lightning ; Level 4 ; Minimum cost: 4
+	[Thunder, Wind]
+	[Thunder, Flare]
+	[Heat, Mist]
+
+Decrease ; Level 4 ; Minimum cost: 4
+	[Dust, Mist]
+
+Booster ; Level 4 ; Minimum cost: 4
+	[Dust, Lava]
+
+Rainbow ; Level 5 ; Minimum cost: 6
+	[Icicle, Mist]
+	[Icicle, Sand]
+	[Frost, Leaf]
+
+Gravity ; Level 5 ; Minimum cost: 6
+	[Forest, Sand]
+	[Forest, Lava]
+	[Leaf, Bomb]
+
+Cyclone ; Level 5 ; Minimum cost: 6
+	[Lightning, Heat]
+	[Lightning, Mist]
+	[Thunder, Frost]
+
+Volcano ; Level 5 ; Minimum cost: 6
+	[Star, Lava]
+	[Star, Heat]
+	[Bomb, Thunder]
+
+Fairy ; Level 5 ; Minimum cost: 8
+	[Star, Icicle]
+	[Lightning, Forest]
+
+Restore ; Level 6 ; Minimum cost: 8
+	[Burst, Booster]
+	[Burst, Decrease]
+
+Blizzard ; Level 6 ; Minimum cost: 8
+	[Rainbow, Mist]
+	[Rainbow, Sand]
+	[Icicle, Lightning]
+
+Photon ; Level 6 ; Minimum cost: 8
+	[Cyclone, Heat]
+	[Cyclone, Mist]
+	[Lightning, Star]
+
+Cluster ; Level 6 ; Minimum cost: 8
+	[Volcano, Lava]
+	[Volcano, Heat]
+	[Star, Forest]
+
+Soul ; Level 6 ; Minimum cost: 8
+	[Gravity, Sand]
+	[Gravity, Lava]
+	[Forest, Icicle]
+
+Protect ; Level 7 ; Minimum cost: 12
+	[Restore, Icicle]
+
+Astral ; Level 7 ; Minimum cost: 12
+	[Restore, Star]
+
+Life ; Level 7 ; Minimum cost: 16
+	[Cluster, Blizzard]
+	[Photon, Soul]
+
+Void ; Level 7 ; Minimum cost: 24
+	[Protect, Astral]
+
+Fenrir ; Level 8 ; Minimum cost: 24
+	[Life, Blizzard]
+
+Dragon ; Level 8 ; Minimum cost: 24
+	[Life, Photon]
+
+Calamity ; Level 8 ; Minimum cost: 24
+	[Life, Cluster]
+
+Crown ; Level 8 ; Minimum cost: 24
+	[Life, Soul]
+
+Chaos ; Level 9 ; Minimum cost: 48
+	[Crown, Dragon]
+
+Holy ; Level 9 ; Minimum cost: 48
+	[Crown, Fenrir]
+
+Ether ; Level 9 ; Minimum cost: 48
+	[Crown, Calamity]

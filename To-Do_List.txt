@@ -1,0 +1,5 @@
+- cleanup files
+- update README:
+   - screenshot.. possible to do scroll capture?
+- finish FAQ
+- merge optimal-junction-pairs and egg-data

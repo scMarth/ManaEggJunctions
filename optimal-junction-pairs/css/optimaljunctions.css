@@ -58,6 +58,13 @@ div#egg-data-div{
    font-size: 20px;
 }
 
+.centerText2{
+  text-align: center;
+  display:block;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .junctionTable{
    width:100%;
    border-collapse: collapse;

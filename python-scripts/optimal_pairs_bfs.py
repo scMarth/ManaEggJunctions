@@ -5,8 +5,10 @@ then the first immediate child junction of that egg to have its cost computed is
 I feel like the correctness of this claim can be proven with induction.
 
 '''
-import datetime
 import sys
+import json
+import datetime
+
 import egg_data
 import optimal_pairs_data
 from mana_eggs import EggNode, Junction
@@ -165,8 +167,6 @@ def bfs(egg_name, optimal_pairs_vars, debug):
 absolute_start_time = datetime.datetime.now()
 optimal_pairs_vars = optimal_pairs_data.OptimalPairsData()
 
-# bfs("Lava", optimal_pairs_vars, debug=True)
-
 for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k]['eggLevel']):
     start_time = datetime.datetime.now()
     
@@ -178,18 +178,22 @@ for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k
     optimal_pairs_vars.visited_eggs[result_egg.name] = True
 
     end_time = datetime.datetime.now()
-    # print("\t" + str(end_time - start_time))
-    # print("\tMinimum cost: " + str(result_egg.min_cost))
     for child_junction in result_egg.child_junctions:
         if child_junction.min_cost == result_egg.min_cost:
             left_egg = child_junction.left_child_egg
             right_egg = child_junction.right_child_egg
             print("\t[" + left_egg.name + ", " + right_egg.name + "]")
-            # print("\t[" + left_egg.name + ", " + right_egg.name + "] ; junction index = " + str(child_junction.junction_id))
 
             # store optimal junctions
             optimal_pairs_vars.optimal_pairs[result_egg.name].append(child_junction.junction_id)
     print("")
+
+with open("../shared/js/optimal_pairs_vars.js", "w") as jsonfile:
+    json_data = json.dumps({ \
+        "optimal_pairs" : optimal_pairs_vars.optimal_pairs, \
+        "min_eggs_to_make" : optimal_pairs_vars.min_eggs_to_make \
+    })
+    jsonfile.write("var optimal_pairs_vars = " + json_data + "\n")
 
 absolute_end_time = datetime.datetime.now()
 print("Total time elapsed: " + str(absolute_end_time - absolute_start_time))
