@@ -3,3 +3,5 @@
    - screenshot.. possible to do scroll capture?
 - finish FAQ
 - merge optimal-junction-pairs and egg-data
+   - update styles in egg-data
+- scss?
