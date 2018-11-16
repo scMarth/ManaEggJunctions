@@ -1,7 +1,9 @@
 - cleanup files
 - update README:
    - screenshot.. possible to do scroll capture?
+   https://chrome.google.com/webstore/detail/full-page-screen-capture/fdpohaocaechififmbbbbbknoalclacl/related
 - finish FAQ
 - merge optimal-junction-pairs and egg-data
    - update styles in egg-data
 - scss?
+- compute cost of all junctions
