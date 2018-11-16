@@ -21,7 +21,7 @@ div#egg-data-div{
    background-color: #202020;
    margin-right: 20px;
    padding: 20px;
-   height:560px;
+   height:600px;
 }
 
 .eggNameDiv{
@@ -60,7 +60,6 @@ div#egg-data-div{
   font-weight: bold;
   justify-content: center;
 }
-
 
 .minCountDiv, .spellCountDiv, .eggTitle{
    display: flex;
@@ -181,11 +180,13 @@ div#egg-data-div{
   width: 100%;
 }
 
-.spellTable tr:nth-child(odd), .junctionTable tr:nth-child(odd){
+/*.spellTable tr:nth-child(odd), .junctionTable tr:nth-child(odd){*/
+.spellTable tr:nth-child(odd){
   background-color: #343434;
 }
 
-.spellTable tr:nth-child(even), .junctionTable tr:nth-child(even){
+/*.spellTable tr:nth-child(even), .junctionTable tr:nth-child(even){*/
+.spellTable tr:nth-child(even){
   background-color: #202020;
 }
 
@@ -200,5 +201,32 @@ div#egg-data-div{
 }
 
 .optimalPair{
-  border: 1px solid #80efaf;
+  border: 2px solid #80efaf;
+}
+
+.spellTable tr{
+  text-align: left;
+}
+
+.spellTable tr th, .junctionTable tr th{
+  font-weight: bold;
+}
+
+.spellTable tr:nth-child(1), .junctionTable tr:nth-child(1){
+  color: white;
+  background-color: #606060;
+}
+
+.headerLeftEgg {
+  text-align: left;
+  padding-left: 37px;
+}
+
+.headerRightEgg {
+  text-align: left;
+  padding-left: 83px;
+}
+
+.headerMinCost {
+  text-align: left;
 }

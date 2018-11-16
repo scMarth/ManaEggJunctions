@@ -104,6 +104,7 @@ function renderEggData(data){
                }
 
                outHTML += "<table class='spellTable'>";
+               outHTML += "<tr><th>Name</th><th>Possible SFs</th><th>MP</th><th>Area</th></tr>";
                for (j=0; j<spells.length; j++){
                   outHTML += spells[j];
                }
@@ -125,6 +126,7 @@ function renderEggData(data){
             outHTML += "</div><br>"
 
             outHTML += "<table class='junctionTable'>";
+            outHTML += "<tr><th class='headerLeftEgg'>&nbspLeft Egg</th><th class='junctionPlus'>+</th><th class='headerRightEgg'>&nbspRight Egg</th><th class='headerMinCost'>Min. Cost</th></tr>"
             for (j=0; j<data[key].junctionPairs.length; j++){
                currJunctionCost = optimal_pairs_vars.min_eggs_to_make[key][j]
 
