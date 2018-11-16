@@ -146,7 +146,7 @@ function renderEggData(data){
 
                // outHTML += "<td><div class='cellMinCountDiv'><span class='cellMinCountSpan'>Cost:&nbsp</span><span class='cellMinCountNum'>" + currJunctionCost + "</span></div></td>"
 
-               outHTML += "<td><span class='cellMinCountNum'>(" + currJunctionCost + ")</span></td>"
+               outHTML += "<td><span class='cellMinCountNum'>  " + currJunctionCost + "</span></td>"
 
                outHTML += "</tr>";
             } 

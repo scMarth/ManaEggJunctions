@@ -58,7 +58,7 @@ div#egg-data-div{
 .cellMinCountNum{
   color: #80efaf;
   font-weight: bold;
-  font-size: 14px;
+  justify-content: center;
 }
 
 
@@ -96,7 +96,7 @@ div#egg-data-div{
   height: 130px;
 }
 
-.magicList, .junctionTable{
+.magicList table, .junctionTable{
    width:100%;
    border-collapse: collapse;
 }
@@ -181,15 +181,15 @@ div#egg-data-div{
   width: 100%;
 }
 
-.spellTable tr:nth-child(odd){
+.spellTable tr:nth-child(odd), .junctionTable tr:nth-child(odd){
   background-color: #343434;
 }
 
-.spellTable tr:nth-child(even){
+.spellTable tr:nth-child(even), .junctionTable tr:nth-child(even){
   background-color: #202020;
 }
 
-.spellTable tr:hover{
+.spellTable tr:hover, .junctionTable tr:hover{
   background-color: #404040;
 }
 
