@@ -110,16 +110,12 @@ function renderEggData(data){
                }
                outHTML += "</table>";
 
-
             outHTML += "</div>";
-
             outHTML += "<br>";
-
             outHTML += "<br>";
             outHTML += "<span class='centerText'>Mana Egg Junctions</span>";
             outHTML += "<br>";
 
-            // outHTML += "<span class='centerText2'>Minimum Cost: " + "<span class='spellCountNum'>" + optimal_pairs_vars.min_eggs_to_make[key] + "</span></span><br>";
             outHTML += "<div class='minCountDiv'>";
             outHTML += "<span class='minCountSpan'>Minimum Cost&nbsp</span>";
             outHTML += "<span class='minCountNum'>" + currEggMinCost + "</span>";
@@ -146,8 +142,6 @@ function renderEggData(data){
                outHTML += "<td class='junctionPlus'>+</td>";
                outHTML += "<td class='rightEgg'><div class='inlineDiv rightJunction " + rightEggImg + "'></div> " + rightEgg + " Egg</td>";
 
-               // outHTML += "<td><div class='cellMinCountDiv'><span class='cellMinCountSpan'>Cost:&nbsp</span><span class='cellMinCountNum'>" + currJunctionCost + "</span></div></td>"
-
                outHTML += "<td><span class='cellMinCountNum'>  " + currJunctionCost + "</span></td>"
 
                outHTML += "</tr>";
@@ -169,7 +163,6 @@ function renderEggData(data){
    outHTML += "<div class='rightColumn'>";
    for (i=(eggHTML.length / 2); i<eggHTML.length; i++) outHTML += eggHTML[i];
    outHTML += "</div>";
-
 
    eggDataDiv.insertAdjacentHTML('beforeend', outHTML);
 }
