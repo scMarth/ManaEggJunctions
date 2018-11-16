@@ -46,6 +46,21 @@ div#egg-data-div{
    background-color: #262626;
 }
 
+.cellMinCountDiv{
+  display: flex;
+  justify-content: left;
+}
+
+.cellMinCountSpan{
+  font-size: 14px;
+}
+
+.cellMinCountNum{
+  color: #80efaf;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 
 .minCountDiv, .spellCountDiv, .eggTitle{
    display: flex;

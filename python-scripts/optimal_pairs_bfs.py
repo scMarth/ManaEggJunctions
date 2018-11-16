@@ -79,7 +79,11 @@ def bfs(egg_name, optimal_pairs_vars, debug):
 
         # check to see if we already know this egg's minimum cost and optimal junction pair(s)
         if optimal_pairs_vars.visited_eggs[curr_node.name] == True:
-            curr_node.min_cost = optimal_pairs_vars.min_eggs_to_make[curr_node.name]
+            # get index of optimal pair junction
+            curr_node_opt_pair = optimal_pairs_vars.optimal_pairs[curr_node.name][0]
+            # get minimum cost
+            curr_node_min_cost = optimal_pairs_vars.min_eggs_to_make[curr_node.name][curr_node_opt_pair]
+            curr_node.min_cost = curr_node_min_cost
             update_costs(curr_node, node_type="egg")
             visited.append(curr_node)
             continue
@@ -174,17 +178,21 @@ for root_egg_name in sorted(egg_data.egg_data, key=lambda k: egg_data.egg_data[k
     print(root_egg_name + " ; Level " + str(egg_data.egg_data[root_egg_name]['eggLevel']) + " ; Minimum cost: " + str(result_egg.min_cost))
 
     # update data on optimal pairs
-    optimal_pairs_vars.min_eggs_to_make[result_egg.name] = result_egg.min_cost
+    # optimal_pairs_vars.min_eggs_to_make[result_egg.name] = result_egg.min_cost
     optimal_pairs_vars.visited_eggs[result_egg.name] = True
 
     end_time = datetime.datetime.now()
     for child_junction in result_egg.child_junctions:
-        if child_junction.min_cost == result_egg.min_cost:
-            left_egg = child_junction.left_child_egg
-            right_egg = child_junction.right_child_egg
-            print("\t[" + left_egg.name + ", " + right_egg.name + "]")
+        left_egg = child_junction.left_child_egg
+        right_egg = child_junction.right_child_egg
+        j_cost = child_junction.min_cost
+        j_index = child_junction.junction_id
+        optimal_pairs_vars.min_eggs_to_make[result_egg.name][j_index] = j_cost
 
-            # store optimal junctions
+        print("\t[" + left_egg.name + ", " + right_egg.name + "] min_cost: " + str(j_cost))
+
+        # store optimal junctions
+        if child_junction.min_cost == result_egg.min_cost:
             optimal_pairs_vars.optimal_pairs[result_egg.name].append(child_junction.junction_id)
     print("")
 

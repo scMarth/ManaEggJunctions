@@ -6,4 +6,5 @@
 - merge optimal-junction-pairs and egg-data
    - update styles in egg-data
 - scss?
-- compute cost of all junctions
+- verify that cost of all junctions look correct
+- proof of correctness (probably by induction?)

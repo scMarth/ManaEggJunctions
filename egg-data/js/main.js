@@ -42,6 +42,8 @@ function renderEggData(data){
 
    for (var i in sortedKeys){
       var key = sortedKeys[i];
+      currEggMinCostJunctionId = optimal_pairs_vars.optimal_pairs[key][0];
+      currEggMinCost = optimal_pairs_vars.min_eggs_to_make[key][currEggMinCostJunctionId];
 
       if (maxSpells == "")
          maxSpells = key;
@@ -119,11 +121,13 @@ function renderEggData(data){
             // outHTML += "<span class='centerText2'>Minimum Cost: " + "<span class='spellCountNum'>" + optimal_pairs_vars.min_eggs_to_make[key] + "</span></span><br>";
             outHTML += "<div class='minCountDiv'>";
             outHTML += "<span class='minCountSpan'>Minimum Cost&nbsp</span>";
-            outHTML += "<span class='minCountNum'>" + optimal_pairs_vars.min_eggs_to_make[key] + "</span>";
+            outHTML += "<span class='minCountNum'>" + currEggMinCost + "</span>";
             outHTML += "</div><br>"
 
             outHTML += "<table class='junctionTable'>";
             for (j=0; j<data[key].junctionPairs.length; j++){
+               currJunctionCost = optimal_pairs_vars.min_eggs_to_make[key][j]
+
                if (optimal_pairs_vars.optimal_pairs[eggName].includes(j)) outHTML += "<tr class='optimalPair'>";
                else outHTML += "<tr>";
 
@@ -139,6 +143,10 @@ function renderEggData(data){
                outHTML += "<td class='leftEgg'><div class='inlineDiv leftJunction " + leftEggImg + "'></div> " + leftEgg + " Egg</td>";
                outHTML += "<td class='junctionPlus'>+</td>";
                outHTML += "<td class='rightEgg'><div class='inlineDiv rightJunction " + rightEggImg + "'></div> " + rightEgg + " Egg</td>";
+
+               // outHTML += "<td><div class='cellMinCountDiv'><span class='cellMinCountSpan'>Cost:&nbsp</span><span class='cellMinCountNum'>" + currJunctionCost + "</span></div></td>"
+
+               outHTML += "<td><span class='cellMinCountNum'>(" + currJunctionCost + ")</span></td>"
 
                outHTML += "</tr>";
             } 
