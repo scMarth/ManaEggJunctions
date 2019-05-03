@@ -8,3 +8,6 @@
 - scss?
 - verify that cost of all junctions look correct
 - proof of correctness (probably by induction?)
+
+- egg-data/eggData.html:
+   - Add legend or indication that junctions with borders are optimal junctions
