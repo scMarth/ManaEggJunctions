@@ -11,3 +11,4 @@
 
 - egg-data/eggData.html:
    - Add legend or indication that junctions with borders are optimal junctions
+   - Clean up console.logs
