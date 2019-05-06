@@ -13,7 +13,6 @@ html, body{
 
 div#egg-data-div{
    margin-left: 20px;
-   margin-top: 20px;
 }
 
 .eggDiv{
@@ -232,7 +231,7 @@ background-color: #404040;
 
 /* Legend Styles */
 #legend{
-   margin: 20px;
+   margin: 20px 20px 0 20px;
    padding: 20px;
    background-color: #202020;
 }
