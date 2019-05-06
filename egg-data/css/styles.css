@@ -1,10 +1,10 @@
 *, html{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    color: #d0d0d0;
-    line-height: 20px;
-    font-size: 16px;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   color: #d0d0d0;
+   line-height: 20px;
+   font-size: 16px;
 }
 
 html, body{
@@ -47,18 +47,18 @@ div#egg-data-div{
 }
 
 .cellMinCountDiv{
-  display: flex;
-  justify-content: left;
+   display: flex;
+   justify-content: left;
 }
 
 .cellMinCountSpan{
-  font-size: 14px;
+   font-size: 14px;
 }
 
 .cellMinCountNum{
-  color: #80efaf;
-  font-weight: bold;
-  justify-content: center;
+   color: #80efaf;
+   font-weight: bold;
+   justify-content: center;
 }
 
 .minCountDiv, .spellCountDiv, .eggTitle{
@@ -74,28 +74,28 @@ div#egg-data-div{
 }
 
 .centerText2{
-  text-align: center;
-  display:block;
-  font-size: 14px;
+   text-align: center;
+   display:block;
+   font-size: 14px;
 }
 
 .minCountSpan, .spellCountSpan{
-  font-size: 14px;
+   font-size: 14px;
    display:block;
 }
 
 .minCountNum, .spellCountNum{
-  font-size: 14px;
+   font-size: 14px;
    display:block;
    color: #80efaf;
    font-weight: bold;
 }
 
-.magicList {
-  height: 130px;
+.magicList{
+   height: 130px;
 }
 
-.magicList table, .junctionTable{
+.spellTable, .junctionTable{
    width:100%;
    border-collapse: collapse;
 }
@@ -140,58 +140,57 @@ div#egg-data-div{
 
 /*
 .leftSpellTable, .rightSpellTable{
-   display: inline-block;
-   width: 50%;
-   vertical-align: top;
+display: inline-block;
+width: 50%;
+vertical-align: top;
 }
 
 .rightSpellTable tbody{
-   display:table;
-   width: 100%;
+display:table;
+width: 100%;
 }
 
 .leftSpellTable tbody{
-   display:table;
-   width: 100%;
+display:table;
+width: 100%;
 }
 
 .leftSpellTable tr:nth-child(odd), .rightSpellTable tr:nth-child(odd) {
-   background-color: #343434;
+background-color: #343434;
 }
 
 .leftSpellTable tr:nth-child(even), .rightSpellTable tr:nth-child(even) {
-   background-color: #202020;
+background-color: #202020;
 }
 
 .leftSpellTable tr:hover, .rightSpellTable tr:hover{
-   background-color: #404040;
+background-color: #404040;
 }
 */
 
-
-.spellTable {
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
+.spellTable{
+   display: inline-block;
+   width: 100%;
+   vertical-align: top;
 }
 
 .spellTable tbody{
-  display: table;
-  width: 100%;
+   display: table;
+   width: 100%;
 }
 
 /*.spellTable tr:nth-child(odd), .junctionTable tr:nth-child(odd){*/
 .spellTable tr:nth-child(odd){
-  background-color: #343434;
+   background-color: #343434;
 }
 
 /*.spellTable tr:nth-child(even), .junctionTable tr:nth-child(even){*/
 .spellTable tr:nth-child(even){
-  background-color: #202020;
+   background-color: #202020;
 }
 
 .spellTable tr:hover, .junctionTable tr:hover{
-  background-color: #404040;
+   background-color: #404040;
 }
 
 .leftColumn, .rightColumn{
@@ -201,32 +200,88 @@ div#egg-data-div{
 }
 
 .optimalPair{
-  border: 2px solid #80efaf;
+   border: 2px solid #80efaf;
 }
 
 .spellTable tr{
-  text-align: left;
+   text-align: left;
 }
 
 .spellTable tr th, .junctionTable tr th{
-  font-weight: bold;
+   font-weight: bold;
 }
 
 .spellTable tr:nth-child(1), .junctionTable tr:nth-child(1){
-  color: white;
-  background-color: #606060;
+   color: white;
+   background-color: #606060;
 }
 
-.headerLeftEgg {
-  text-align: left;
-  padding-left: 37px;
+.headerLeftEgg{
+   text-align: left;
+   padding-left: 37px;
 }
 
-.headerRightEgg {
-  text-align: left;
-  padding-left: 83px;
+.headerRightEgg{
+   text-align: left;
+   padding-left: 83px;
 }
 
-.headerMinCost {
-  text-align: left;
+.headerMinCost{
+   text-align: left;
+}
+
+/* Legend Styles */
+#legend{
+   margin: 20px;
+   padding: 20px;
+   background-color: #202020;
+}
+
+#legendHeader{
+   text-align: center;
+}
+
+#legend-column-1, #legend-column-2, #legend-column-3{
+   width: 33%;
+   display: inline-block;
+   vertical-align: top;
+}
+
+#legend-item-1{
+   border: 2px solid #80efaf;   
+}
+
+.legend-item-graphic{
+   height: 16px;
+   width: 16px;
+}
+
+.legend-item-graphic, .legend-item-label{
+   display: inline-block;
+}
+
+.legendTable{
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.legendTable tr:nth-child(odd){
+   background-color: #343434;
+}
+
+.legendTable tr:nth-child(even){
+   background-color: #202020;
+}
+
+.legendTable tr:nth-child(1){
+   color: white;
+   background-color: #606060;
+}
+
+.legendTable tr th{
+   font-weight: bold;
+}
+
+.legendTable tr:hover{
+   background-color: #404040;
 }

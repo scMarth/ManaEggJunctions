@@ -6,14 +6,163 @@
    <link rel="stylesheet" href="../shared/css/reset.css">
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="../shared/images/css/sprites.css">
-   <link rel="stylesheet" href="../shared/images/css/small-egg-sprites.css">
-   <link rel="stylesheet" href="../shared/images/css/elements-sprites.css">
-   <link rel="stylesheet" href="../shared/images/css/medium-egg-sprites.css">
    <link rel="stylesheet" href="../shared/images/css/smaller-sf-sprites.css">
+   <link rel="stylesheet" href="../shared/images/css/small-egg-sprites.css">
+   <link rel="stylesheet" href="../shared/images/css/medium-egg-sprites.css">
+   <link rel="stylesheet" href="../shared/images/css/elements-sprites.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+   <div id="legend">
+      <div id="legendHeader">
+         <span class="centerText">Legend</span>
+      </div>
+      <br>
 
+      <div id="legend-column-1">
+         <table class="legendTable">
+            <tr>
+               <th>Junction Types</th>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div id="legend-item-1" class="legend-item-graphic"></div>
+                        <div class="legend-item-label">Optimal Pair</div>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="legend-column-2">
+         <table class="legendTable">
+            <tr>
+               <th>SF Flags</th>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="h-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Increased Hits</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="ip-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Increased IP Damage</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="mp-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Reduced MP Cost</div>
+                     </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="p-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Increased Power</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="s-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Decreased Cast Time</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                        <div class="w-icon legend-item-graphic"></div>
+                        <div class="legend-item-label">Increased Area Width</div>
+                  </div>
+               </td>
+            </tr>
+         </table> 
+      </div>
+      <div id="legend-column-3">
+         <table class="legendTable">
+            <tr>
+               <th>
+                  Elements
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Blizzard legend-item-graphic"></div>
+                     <div class="legend-item-label">Blizzard</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Bolt legend-item-graphic"></div>
+                     <div class="legend-item-label">Bolt</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Bomb legend-item-graphic"></div>
+                     <div class="legend-item-label">Bomb</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Fire legend-item-graphic"></div>
+                     <div class="legend-item-label">Fire</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Forest legend-item-graphic"></div>
+                     <div class="legend-item-label">Forest</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Land legend-item-graphic"></div>
+                     <div class="legend-item-label">Land</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Water legend-item-graphic"></div>
+                     <div class="legend-item-label">Water</div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="legend-item">
+                     <div class="Wind legend-item-graphic"></div>
+                     <div class="legend-item-label">Wind</div>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </div>
    <div id="egg-data-div"></div>
    
    <script src="../shared/js/eggdata.js"></script>

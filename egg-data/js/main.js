@@ -152,9 +152,6 @@ function renderEggData(data){
       }
    }
 
-   console.log("maxSpells", maxSpells);
-   console.log("maxJunctions", maxJunctions);
-
    var outHTML = "";
    outHTML += "<div class='leftColumn'>";
    for (i=0; i<(eggHTML.length / 2); i++) outHTML += eggHTML[i];
