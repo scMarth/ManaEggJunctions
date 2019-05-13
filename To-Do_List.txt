@@ -11,3 +11,4 @@
 
 - egg-data/eggData.html:
    - responsive?
+   - Re-do with BEM / Bootstrap?
